@@ -5,19 +5,27 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'black': '#000000',
-      
-      'zinc-500': '#71717A',
-      'zinc-700': '#3F3F46',
-      
-      'neutral-50': '#FAFAFA',
-      'neutral-100': '#F5F5F5',
-      'neutral-900': '#171717',
-      
-      'indigo-300': '#A5B4FC',
-      'indigo-500': '#6366F1',
-      'indigo-600': '#4F46E5',
+      common: {
+        black: '#000000',
+        white: '#ffffff',
+        transparent: 'transparent',
+      },
+      zinc: {
+        500: '#71717A',
+        700: '#3F3F46',
+      },
+      neutral: {
+        50: '#FAFAFA',
+        100: '#F5F5F5',
+        900: '#171717',
+      },
+      indigo: {
+        300: '#A5B4FC',
+        500: '#6366F1',
+        600: '#4F46E5',
+      },
     },
+    
     fontSize: {
       '2xl': 32,
       xl: 24,
@@ -26,6 +34,7 @@ module.exports = {
       sm: 16,
       xs: 14,
     },
+    
     extend: {
       fontFamily: {
         sans: 'Inter, sans-serif',
