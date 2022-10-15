@@ -5,11 +5,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-export function Button({
-  children,
-  fullWidth = false,
-  ...props
-}: ButtonProps) {
+export function Button({ children, fullWidth = false, ...props }: ButtonProps) {
   return (
     <button
       {...props}

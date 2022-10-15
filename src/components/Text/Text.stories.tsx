@@ -11,11 +11,11 @@ export default {
   },
   argTypes: {
     color: {
-      table: { disable: true }
+      table: { disable: true },
     },
     size: {
       options: ['sm', 'md', 'lg'],
-      control: { type: 'inline-radio' }
+      control: { type: 'inline-radio' },
     },
   },
 } as Meta<TextProps>;
@@ -23,18 +23,18 @@ export default {
 export const Primary: StoryObj<TextProps> = {
   argTypes: {
     component: {
-      table: { disable: true }
+      table: { disable: true },
     },
   },
 };
 
 export const Secondary: StoryObj<TextProps> = {
-  args: { 
+  args: {
     color: 'secondary',
   },
   argTypes: {
     component: {
-      table: { disable: true }
+      table: { disable: true },
     },
   },
 };
@@ -46,7 +46,7 @@ export const Customized: StoryObj<TextProps> = {
   argTypes: {
     component: {
       options: ['label', 'p', 'span'],
-      control: { type: 'select' }
+      control: { type: 'select' },
     },
-  }
+  },
 };

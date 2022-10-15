@@ -1,4 +1,4 @@
-import "./styles/global.css";
+import './styles/global.css';
 
 export function App() {
   return (
@@ -7,9 +7,7 @@ export function App() {
 
       <main></main>
 
-      <footer>
-        
-      </footer>
+      <footer></footer>
     </>
-  )
+  );
 }

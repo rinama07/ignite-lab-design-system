@@ -1,5 +1,5 @@
-import { Slot } from "@radix-ui/react-slot";
-import { InputHTMLAttributes, LabelHTMLAttributes, ReactNode } from "react";
+import { Slot } from '@radix-ui/react-slot';
+import { InputHTMLAttributes, LabelHTMLAttributes, ReactNode } from 'react';
 
 interface InputTextRootProps {
   children: ReactNode;
@@ -13,10 +13,10 @@ function InputTextRoot({ children }: InputTextRootProps) {
     >
       {children}
     </div>
-  )
+  );
 }
 
-interface InputTextLabel extends LabelHTMLAttributes<HTMLLabelElement> {}
+type InputTextLabel = LabelHTMLAttributes<HTMLLabelElement>;
 
 function InputTextLabel(props: InputTextLabel) {
   return (
@@ -36,7 +36,7 @@ function InputTextIcon({ children }: InputTextIcon) {
   );
 }
 
-export interface InputTextProps extends InputHTMLAttributes<HTMLInputElement> {};
+export type InputTextProps = InputHTMLAttributes<HTMLInputElement>;
 
 function InputTextInput(props: InputTextProps) {
   return (
@@ -54,4 +54,4 @@ export const InputText = {
   Root: InputTextRoot,
   Input: InputTextInput,
   Icon: InputTextIcon,
-}
+};

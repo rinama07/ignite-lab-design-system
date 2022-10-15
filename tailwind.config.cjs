@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.tsx',
-  ],
+  content: ['./src/**/*.tsx'],
   theme: {
     colors: {
       common: {
@@ -24,7 +22,7 @@ module.exports = {
         primary: '#14b8a6',
         secondary: '#5eead4',
       },
-    },    
+    },
     fontSize: {
       '2xl': 32,
       xl: 24,
@@ -33,12 +31,12 @@ module.exports = {
       sm: 16,
       xs: 14,
     },
-    
+
     extend: {
       fontFamily: {
         sans: 'Inter, sans-serif',
-      }
+      },
     },
   },
   plugins: [],
-}
+};

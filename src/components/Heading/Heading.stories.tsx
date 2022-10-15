@@ -13,11 +13,11 @@ export default {
   argTypes: {
     component: {
       options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      control: { type: 'select' }
+      control: { type: 'select' },
     },
     size: {
       options: ['sm', 'md', 'lg'],
-      control: { type: 'inline-radio' }
+      control: { type: 'inline-radio' },
     },
   },
 } as Meta<HeadingProps>;
@@ -25,9 +25,9 @@ export default {
 export const Default: StoryObj<HeadingProps> = {
   argTypes: {
     component: {
-      table: { disable: true }
+      table: { disable: true },
     },
-  }
+  },
 };
 
 export const Customized: StoryObj<HeadingProps> = {

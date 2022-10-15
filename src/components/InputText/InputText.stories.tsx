@@ -11,25 +11,26 @@ export default {
   },
   argTypes: {
     children: {
-      table: { disable: true }
-    }
+      table: { disable: true },
+    },
   },
-  
 } as Meta<InputTextProps>;
 
-export const Default: StoryObj<InputTextProps> = {}
+export const Default: StoryObj<InputTextProps> = {};
 
 export const Disabled: StoryObj<InputTextProps> = {
   args: {
     children: <InputText.Input placeholder="Type your name" disabled />,
   },
-}
+};
 
 export const Filled: StoryObj<InputTextProps> = {
   args: {
-    children: <InputText.Input placeholder="Type your name" value="User name" />,
+    children: (
+      <InputText.Input placeholder="Type your name" value="User name" />
+    ),
   },
-}
+};
 
 export const WithIcon: StoryObj<InputTextProps> = {
   args: {
@@ -40,17 +41,17 @@ export const WithIcon: StoryObj<InputTextProps> = {
         </InputText.Icon>
         <InputText.Input placeholder="Type your name" />
       </>
-    )
+    ),
   },
-}
+};
 
 export const WithLabel: StoryObj<InputTextProps> = {
   decorators: [
     (Story) => (
-      <div className='flex flex-col gap-1'>
+      <div className="flex flex-col gap-1">
         <InputText.Label>Full name</InputText.Label>
         {Story()}
       </div>
     ),
   ],
-}
+};

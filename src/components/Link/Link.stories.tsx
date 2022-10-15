@@ -12,7 +12,7 @@ export default {
   argTypes: {
     size: {
       options: ['sm', 'md', 'lg'],
-      control: { type: 'inline-radio' }
+      control: { type: 'inline-radio' },
     },
   },
 } as Meta<LinkProps>;

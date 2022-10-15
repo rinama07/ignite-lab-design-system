@@ -5,7 +5,7 @@ import { TextSize } from '../../constants/TextSize';
 export type TextComponent = 'label' | 'p' | 'span';
 export type TextColor = 'primary' | 'secondary';
 
-export interface TextProps{
+export interface TextProps {
   children: string;
   color?: TextColor;
   component?: TextComponent;
@@ -19,17 +19,18 @@ export function Text({
   size = 'md',
 }: TextProps) {
   const Component = component;
-  
+
   return (
-    <Component className={clsx(
-      'font-sans', 
-      {
+    <Component
+      className={clsx('font-sans', {
         'text-text-primary': color === 'primary',
         'text-text-secondary': color === 'secondary',
         'text-xs': size === 'sm',
         'text-sm': size === 'md',
         'text-md': size === 'lg',
-      }
-    )}>{children}</Component>
+      })}
+    >
+      {children}
+    </Component>
   );
 }

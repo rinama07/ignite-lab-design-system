@@ -16,15 +16,16 @@ export function Heading({
   size = 'md',
 }: HeadingProps) {
   const Component = component;
-  
+
   return (
-    <Component className={clsx(
-      'text-text-primary font-bold font-sans',
-      {
+    <Component
+      className={clsx('text-text-primary font-bold font-sans', {
         'text-lg': size === 'sm',
         'text-xl': size === 'md',
         'text-2xl': size === 'lg',
-      }
-    )}>{children}</Component>
+      })}
+    >
+      {children}
+    </Component>
   );
 }

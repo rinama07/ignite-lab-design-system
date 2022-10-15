@@ -10,16 +10,12 @@ export default {
   },
   argTypes: {
     children: {
-      table: { disable: true }
-    }
+      table: { disable: true },
+    },
   },
   decorators: [
-    (Story) => (
-      <div className='flex items-center gap-2'>
-        {Story()}
-      </div>
-    )
-  ]
+    (Story) => <div className="flex items-center gap-2">{Story()}</div>,
+  ],
 } as Meta<CheckboxProps>;
 
-export const Default: StoryObj<CheckboxProps> = {}
+export const Default: StoryObj<CheckboxProps> = {};
