@@ -16,7 +16,7 @@ export function Link({
     <a 
       {...props}
       className={clsx(
-        'text-zinc-500 underline hover:cursor-pointer font-sans', 
+        'text-text-secondary underline hover:cursor-pointer font-sans', 
         {
           'text-xs': size === 'sm',
           'text-sm': size === 'md',

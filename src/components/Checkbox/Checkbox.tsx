@@ -1,36 +1,49 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { Check } from 'phosphor-react';
-import { ReactNode } from 'react';
+import { LabelHTMLAttributes, ReactNode } from "react";
+import { Text, TextProps } from '../Text/Text';
 
 interface CheckboxRootProps {
-  children: ReactNode;
+  children: ReactNode; 
 }
 
 function CheckboxRoot({ children }: CheckboxRootProps) {
   return (
-    <div className='flex items-center gap-2'>
+    <div className='flex items-center gap-2 '>
       {children}
     </div>
   )
 }
 
-export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {};
-
-function CheckboxInput(props: CheckboxProps) {
+function CheckboxLabel({ children }: TextProps) {
   return (
-    <CheckboxPrimitive.Root {...props} className='w-6 h-6 p-[2px] rounded bg-zinc-700 disabled:opacity-60'>
-      <CheckboxPrimitive.Indicator asChild>
-        <Check weight='bold' className='h-5 w-5 text-indigo-500' />
-      </CheckboxPrimitive.Indicator>
-    </CheckboxPrimitive.Root>
+    <Text component='label' color='primary' size='sm'>{children}</Text>
   )
 }
 
-export function Checkbox({ children, ...props }: CheckboxProps) {
+export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
+  label: string;
+};
+
+function CheckboxInput({ label, ...props }: CheckboxProps) {
   return (
-    <CheckboxRoot>
-      <CheckboxInput {...props} />
-      {children}
-    </CheckboxRoot>
-  )
+    <>
+      <CheckboxPrimitive.Root
+        {...props}
+        className='w-6 h-6 p-[2px] rounded bg-background-field disabled:opacity-60'
+        aria-label={label}
+      >
+        <CheckboxPrimitive.Indicator asChild>
+          <Check weight='bold' className='h-5 w-5 text-theme-primary' />
+        </CheckboxPrimitive.Indicator>
+      </CheckboxPrimitive.Root>
+
+      <CheckboxLabel>{label}</CheckboxLabel>
+    </>
+  );
+}
+
+export const Checkbox = {
+  Root: CheckboxRoot,
+  Input: CheckboxInput,
 }
