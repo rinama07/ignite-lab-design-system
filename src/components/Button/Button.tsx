@@ -1,9 +1,8 @@
+import { ButtonHTMLAttributes } from 'react';
 import { clsx } from 'clsx';
-import { HTMLAttributes } from 'react';
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
-  disabled?: boolean;
 }
 
 export function Button({
