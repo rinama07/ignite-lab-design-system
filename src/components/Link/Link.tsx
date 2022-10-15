@@ -1,9 +1,9 @@
 import { clsx } from 'clsx';
-import { HTMLAttributes } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 
 import { TextSize } from '../../constants/TextSize';
 
-export interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
+export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   size?: TextSize;
 }
 
