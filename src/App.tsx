@@ -1,7 +1,15 @@
-import './styles/global.css';
+import "./styles/global.css";
 
 export function App() {
   return (
-    <h1>Hello!</h1>
+    <>
+      <header></header>
+
+      <main></main>
+
+      <footer>
+        
+      </footer>
+    </>
   )
 }

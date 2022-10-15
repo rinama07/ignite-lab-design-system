@@ -1,0 +1,10 @@
+# Packages
+node_modules
+
+# Config files
+*.json
+README.md
+
+# Storybook
+.storybook
+storybook-static
