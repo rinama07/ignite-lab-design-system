@@ -19,7 +19,7 @@ export function Heading({
   
   return (
     <Component className={clsx(
-      'text-neutral-50 font-bold font-sans', 
+      'text-text-primary font-bold font-sans',
       {
         'text-lg': size === 'sm',
         'text-xl': size === 'md',

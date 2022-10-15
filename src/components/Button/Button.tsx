@@ -14,9 +14,10 @@ export function Button({
     <button
       {...props}
       className={clsx(
-        'text-common-black bg-indigo-500 text-md font-sans px-4 py-3 rounded',
-        'enabled:hover:bg-indigo-300 enabled:hover:cursor-pointer enabled:transition-colors',
-        'enabled:focus:ring-2 disabled:opacity-60',
+        'text-common-black bg-theme-primary text-md font-semibold px-4 py-3 rounded outline-none',
+        'enabled:hover:bg-theme-secondary enabled:hover:text-common-black enabled:hover:ring-0',
+        'enabled:cursor-pointer transition-colors disabled:opacity-60',
+        'focus:bg-background-highlight focus:text-common-white focus:ring-2 ring-common-white',
         {
           'w-full': fullWidth,
         }
