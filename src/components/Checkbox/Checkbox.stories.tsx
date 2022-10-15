@@ -1,37 +1,25 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Text } from '../Text/Text';
 import { Checkbox, CheckboxProps } from './Checkbox';
 
 export default {
   title: 'Components/Checkbox',
-  component: Checkbox,
-  args: {},
+  component: Checkbox.Root,
+  args: {
+    children: <Checkbox.Input label="Remember me" />,
+  },
   argTypes: {
     children: {
       table: { disable: true }
-    },
-  }
+    }
+  },
+  decorators: [
+    (Story) => (
+      <div className='flex items-center gap-2'>
+        {Story()}
+      </div>
+    )
+  ]
 } as Meta<CheckboxProps>;
 
-export const Default: StoryObj<CheckboxProps> = {};
-
-export const Disabled: StoryObj<CheckboxProps> = {
-  args: {
-    disabled: true,
-  }
-};
-
-export const WithText: StoryObj<CheckboxProps> = {
-  args: {
-    checked: true,
-    children: <Text size="sm">Remember me</Text>,
-  },
-};
-
-export const DisabledWithText: StoryObj<CheckboxProps> = {
-  args: {
-    disabled: true,
-    children: <Text size="sm">Remember me</Text>,
-  },
-};
+export const Default: StoryObj<CheckboxProps> = {}
