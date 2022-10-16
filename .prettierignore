@@ -3,6 +3,7 @@ node_modules
 
 # Config files
 *.json
+*.css
 README.md
 
 # Storybook
