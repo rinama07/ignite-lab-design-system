@@ -7,6 +7,7 @@ export type TextColor = 'primary' | 'secondary';
 
 export interface TextProps {
   children: string;
+  className?: string;
   color?: TextColor;
   component?: TextComponent;
   size?: TextSize;
@@ -14,6 +15,7 @@ export interface TextProps {
 
 export function Text({
   children,
+  className,
   color = 'primary',
   component = 'span',
   size = 'md',
@@ -22,13 +24,17 @@ export function Text({
 
   return (
     <Component
-      className={clsx('font-sans', {
-        'text-text-primary': color === 'primary',
-        'text-text-secondary': color === 'secondary',
-        'text-xs': size === 'sm',
-        'text-sm': size === 'md',
-        'text-md': size === 'lg',
-      })}
+      className={clsx(
+        'font-sans',
+        {
+          'text-text-primary': color === 'primary',
+          'text-text-secondary': color === 'secondary',
+          'text-xs': size === 'sm',
+          'text-sm': size === 'md',
+          'text-md': size === 'lg',
+        },
+        className
+      )}
     >
       {children}
     </Component>
