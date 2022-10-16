@@ -1,47 +1,48 @@
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { Check } from 'phosphor-react';
 import { ReactNode } from 'react';
-import { Text, TextProps } from '../Text/Text';
+import { Text } from '../Text/Text';
 
 interface CheckboxRootProps {
   children: ReactNode;
 }
 
 function CheckboxRoot({ children }: CheckboxRootProps) {
-  return <div className="flex items-center gap-2 ">{children}</div>;
+  return <div className="flex mt-4 mb-4">{children}</div>;
 }
 
-function CheckboxLabel({ children }: TextProps) {
+interface CheckboxLabelProps {
+  children?: ReactNode;
+  inputId: string;
+  text: string;
+}
+
+function CheckboxLabel({ children, inputId, text }: CheckboxLabelProps) {
   return (
-    <Text component="label" color="primary" size="sm">
+    <label htmlFor={inputId} className="flex items-center gap-3 cursor-pointer">
       {children}
-    </Text>
+      <Text size="sm">{text}</Text>
+    </label>
   );
 }
 
-export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
-  label: string;
-}
+export type CheckboxProps = RadixCheckbox.CheckboxProps;
 
-function CheckboxInput({ label, ...props }: CheckboxProps) {
+function CheckboxInput(props: CheckboxProps) {
   return (
-    <>
-      <CheckboxPrimitive.Root
-        {...props}
-        className="w-6 h-6 p-[2px] rounded bg-background-field disabled:opacity-60"
-        aria-label={label}
-      >
-        <CheckboxPrimitive.Indicator asChild>
-          <Check weight="bold" className="h-5 w-5 text-theme-primary" />
-        </CheckboxPrimitive.Indicator>
-      </CheckboxPrimitive.Root>
-
-      <CheckboxLabel>{label}</CheckboxLabel>
-    </>
+    <RadixCheckbox.Root
+      {...props}
+      className="w-6 h-6 p-[2px] rounded bg-background-field disabled:opacity-60"
+    >
+      <RadixCheckbox.Indicator asChild>
+        <Check weight="bold" className="h-5 w-5 text-theme-primary" />
+      </RadixCheckbox.Indicator>
+    </RadixCheckbox.Root>
   );
 }
 
 export const Checkbox = {
+  Label: CheckboxLabel,
   Root: CheckboxRoot,
   Input: CheckboxInput,
 };

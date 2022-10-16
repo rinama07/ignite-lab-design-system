@@ -6,7 +6,7 @@ export default {
   title: 'Components/Checkbox',
   component: Checkbox.Root,
   args: {
-    children: <Checkbox.Input label="Remember me" />,
+    children: <Checkbox.Input id="test" aria-label="Lorem ipsum" />,
   },
   argTypes: {
     children: {
@@ -19,3 +19,13 @@ export default {
 } as Meta<CheckboxProps>;
 
 export const Default: StoryObj<CheckboxProps> = {};
+
+export const WithText: StoryObj<CheckboxProps> = {
+  args: {
+    children: (
+      <Checkbox.Label inputId="test" text="Lorem ipsum">
+        <Checkbox.Input id="test" aria-label="Lorem ipsum" />
+      </Checkbox.Label>
+    ),
+  },
+};
