@@ -1,5 +1,7 @@
 import { Slot } from '@radix-ui/react-slot';
-import { InputHTMLAttributes, LabelHTMLAttributes, ReactNode } from 'react';
+import { InputHTMLAttributes, ReactNode } from 'react';
+
+import { Text } from '../Text/Text';
 
 interface InputTextRootProps {
   children: ReactNode;
@@ -16,11 +18,18 @@ function InputTextRoot({ children }: InputTextRootProps) {
   );
 }
 
-type InputTextLabel = LabelHTMLAttributes<HTMLLabelElement>;
+interface InputTextLabelProps {
+  children?: ReactNode;
+  inputId: string;
+  text: string;
+}
 
-function InputTextLabel(props: InputTextLabel) {
+function InputTextLabel({ children, inputId, text }: InputTextLabelProps) {
   return (
-    <label {...props} className="text-text-primary font-semibold text-sm" />
+    <label htmlFor={inputId} className="flex flex-col gap-3">
+      <Text className="font-semibold">{text}</Text>
+      {children}
+    </label>
   );
 }
 
@@ -50,8 +59,8 @@ function InputTextInput(props: InputTextProps) {
 }
 
 export const InputText = {
+  Icon: InputTextIcon,
+  Input: InputTextInput,
   Label: InputTextLabel,
   Root: InputTextRoot,
-  Input: InputTextInput,
-  Icon: InputTextIcon,
 };

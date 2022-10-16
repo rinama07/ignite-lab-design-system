@@ -7,7 +7,7 @@ export default {
   title: 'Components/InputText',
   component: InputText.Root,
   args: {
-    children: <InputText.Input placeholder="Type your name" />,
+    children: <InputText.Input id="test" placeholder="Type your name" />,
   },
   argTypes: {
     children: {
@@ -20,14 +20,20 @@ export const Default: StoryObj<InputTextProps> = {};
 
 export const Disabled: StoryObj<InputTextProps> = {
   args: {
-    children: <InputText.Input placeholder="Type your name" disabled />,
+    children: (
+      <InputText.Input id="test" placeholder="Type your name" disabled />
+    ),
   },
 };
 
 export const Filled: StoryObj<InputTextProps> = {
   args: {
     children: (
-      <InputText.Input placeholder="Type your name" value="User name" />
+      <InputText.Input
+        id="test"
+        placeholder="Type your name"
+        value="User name"
+      />
     ),
   },
 };
@@ -39,7 +45,7 @@ export const WithIcon: StoryObj<InputTextProps> = {
         <InputText.Icon>
           <LockSimple />
         </InputText.Icon>
-        <InputText.Input placeholder="Type your name" />
+        <InputText.Input id="test" placeholder="Type your name" />
       </>
     ),
   },
@@ -48,10 +54,9 @@ export const WithIcon: StoryObj<InputTextProps> = {
 export const WithLabel: StoryObj<InputTextProps> = {
   decorators: [
     (Story) => (
-      <div className="flex flex-col gap-1">
-        <InputText.Label>Full name</InputText.Label>
+      <InputText.Label inputId="test" text="Full name">
         {Story()}
-      </div>
+      </InputText.Label>
     ),
   ],
 };
